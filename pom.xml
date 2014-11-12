@@ -33,6 +33,14 @@
     <name>Apache Axis2 - Root</name>
     <inceptionYear>2004</inceptionYear>
     <url>http://axis.apache.org/axis2/java/core/</url>
+
+    <scm>
+        <connection>scm:git:https://github.com/Kishanthan/wso2-axis2.git</connection>
+        <developerConnection>scm:git:https://github.com/Kishanthan/wso2-axis2.git</developerConnection>
+        <url>https://github.com/Kishanthan/wso2-axis2.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <issueManagement>
         <system>jira</system>
         <url>http://issues.apache.org/jira/browse/AXIS2</url>
@@ -594,16 +602,16 @@
     </repositories>
 
     <distributionManagement>
-      <repository>
-        <id>wso2.releases</id>
-        <name>WSO2 Release Distribution Repository</name>
-        <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
-      </repository>
-      <snapshotRepository>
-        <id>wso2.snapshots</id>
-        <name>Internal Releases</name>
-        <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-     </snapshotRepository>   
+        <repository>
+            <id>nexus-releases</id>
+            <name>WSO2 Nexus Release Repository</name>
+            <url>http://localhost:8081/nexus/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Internal Releases</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <properties>
@@ -611,6 +619,7 @@
              we can't use the project.version variable directly because of the dot. See
              http://maven.apache.org/plugins/maven-site-plugin/examples/creating-content.html -->
         <axis2_version>${project.version}</axis2_version>
+        <project.scm.id>scm-server</project.scm.id>
     </properties>
     <build>
         <!-- Note: the pluginManagement in axis2-parent doesn't apply here; we
@@ -641,21 +650,6 @@
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>2.2</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <!-- Note: 2.0 seems to have issues with the calculation of the tag path -->
-                    <version>2.0-beta-9</version>
-                    <configuration>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <!-- "clean verify" fails because for OSGi bundles, there
-                             is a mismatch between the type of the dependency (jar)
-                             and the actual packaging (bundle) and Maven resolves
-                             the dependency from the local repository instead of the
-                             reactor. -->
-                        <preparationGoals>clean install</preparationGoals>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-site-plugin</artifactId>
@@ -726,6 +720,23 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>
