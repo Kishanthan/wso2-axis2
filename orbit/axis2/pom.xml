@@ -19,12 +19,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <parent>
-        <groupId>org.apache.axis2</groupId>
-        <artifactId>axis2</artifactId>
-        <version>1.6.1-wso2v11-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.axis2.wso2</groupId>
     <artifactId>axis2</artifactId>
@@ -72,7 +66,7 @@
         </repository>
     </repositories>
 
-    <!--distributionManagement>
+    <distributionManagement>
         <repository>
             <id>nexus-releases</id>
             <name>WSO2 Nexus Release Repository</name>
@@ -83,7 +77,7 @@
             <name>WSO2 Maven2 Snapshot Repository</name>
             <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
         </snapshotRepository>
-    </distributionManagement-->
+    </distributionManagement>
 
     <dependencies>
         <dependency>
