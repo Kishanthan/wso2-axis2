@@ -734,6 +734,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
+                <arguments>-Dmaven.test.skip=true</arguments>
                 <version>2.5.1</version>
             </plugin>
             <plugin>
