@@ -19,12 +19,13 @@
   ~ under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apache.axis2</groupId>
         <artifactId>axis2-parent</artifactId>
-        <version>1.6.1-wso2v11</version>
+        <version>1.6.1-wso2v11-SNAPSHOT</version>
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     <artifactId>axis2-transport-tcp</artifactId>
@@ -36,8 +37,7 @@
         <connection>scm:svn:http://svn.apache.org/repos/asf/axis/axis2/java/transports/trunk/modules/tcp</connection>
         <developerConnection>scm:svn:https://svn.apache.org/repos/asf/axis/axis2/java/transports/trunk/modules/tcp</developerConnection>
         <url>http://svn.apache.org/viewvc/axis/axis2/java/transports/trunk/modules/tcp</url>
-      <tag>axis2-1.6.1-wso2v11-rc1</tag>
-  </scm>
+    </scm>
 
     <build>
         <sourceDirectory>src</sourceDirectory>
@@ -67,11 +67,14 @@
                         <phase>test-compile</phase>
                         <configuration>
                             <tasks>
-                                <mkdir dir="target/test-resources/samples/modules" />
-                                <mkdir dir="target/test-resources/samples/conf" />
-                              	<copy file="${settings.localRepository}/org/apache/axis2/addressing/${project.version}/addressing-${project.version}.mar" tofile="target/test-resources/samples/modules/addressing.mar" />
-                                <copy file="conf/axis2.xml" tofile="target/test-resources/samples/conf/axis2.xml" />
-                                <copy file="conf/client_axis2.xml" tofile="target/test-resources/samples/conf/client_axis2.xml" />
+                                <mkdir dir="target/test-resources/samples/modules"/>
+                                <mkdir dir="target/test-resources/samples/conf"/>
+                              	<copy file="${settings.localRepository}/org/apache/axis2/addressing/${project.version}/addressing-${project.version}.mar"
+    	                              tofile="target/test-resources/samples/modules/addressing.mar"/>
+                                <copy file="conf/axis2.xml"
+    	                              tofile="target/test-resources/samples/conf/axis2.xml"/>
+                                <copy file="conf/client_axis2.xml"
+    	                              tofile="target/test-resources/samples/conf/client_axis2.xml"/>
                             </tasks>
                         </configuration>
                        <goals>
