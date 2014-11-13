@@ -733,8 +733,8 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <arguments>-Dmaven.test.skip=true</arguments>
                 </configuration>
-                <arguments>-Dmaven.test.skip=true</arguments>
                 <version>2.5.1</version>
             </plugin>
             <plugin>
