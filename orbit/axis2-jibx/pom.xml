@@ -22,7 +22,7 @@
     <artifactId>axis2-jibx</artifactId>
     <packaging>bundle</packaging>
     <name>axis2.jibx.wso2</name>
-    <version>1.6.1-wso2v12-SNAPSHOT</version>
+    <version>1.6.1-wso2v11</version>
     <description>
         org.wso2.carbon.axis2.jibx. This bundle will export packages for Axis2-jibx.
     </description>
@@ -104,7 +104,7 @@
     </build>
     <properties>
         <orbit.version.axis2>1.6.1.wso2v11-SNAPSHOT</orbit.version.axis2>
-        <version.axis2>1.6.1-wso2v12-SNAPSHOT</version.axis2>
+        <version.axis2>1.6.1-wso2v11</version.axis2>
         <exp.pkg.version.axis2>1.6.1.wso2v11-SNAPSHOT</exp.pkg.version.axis2>
     </properties>
 </project>
