@@ -733,6 +733,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <configuration>
                     <arguments>-Dmaven.test.skip=true</arguments>
+		    <preparationGoals>clean install</preparationGoals>
                 </configuration>
                 <version>2.5.1</version>
             </plugin>
