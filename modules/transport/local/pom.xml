@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.apache.axis2</groupId>
         <artifactId>axis2-parent</artifactId>
-        <version>1.6.1-wso2v11-SNAPSHOT</version>
+        <version>1.6.1-wso2v11</version>
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     <artifactId>axis2-transport-local</artifactId>
@@ -35,7 +35,8 @@
         <connection>scm:svn:http://svn.apache.org/repos/asf/axis/axis2/java/core/branches/1_6/modules/transport/local</connection>
         <developerConnection>scm:svn:https://svn.apache.org/repos/asf/axis/axis2/java/core/branches/1_6/modules/transport/local</developerConnection>
         <url>http://svn.apache.org/viewvc/axis/axis2/java/core/branches/1_6/modules/transport/local</url>
-    </scm>
+      <tag>axis2-1.6.1-wso2v11-rc4</tag>
+  </scm>
     <build>
         <sourceDirectory>src</sourceDirectory>
         <testSourceDirectory>test</testSourceDirectory>
